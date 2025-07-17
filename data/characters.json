@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Coraline",
+    "age": 11,
+    "photo": "https://www.elimparcial.com/resizer/v2/NIKDF6ZQOVDMJICFCUAA7LJ2DI.png?auth=3dc68dd809aa8f38298ab22bfecddb1bd3aabf83769aabc9140126436d7887f3&smart=true&width=1200&height=800&quality=70"
+  },
+  {
+    "name": "Aang",
+    "age": 112,
+    "photo": "https://oyster.ignimgs.com/mediawiki/apis.ign.com/avatar-the-last-airbender/b/b0/Aang_img.jpg"
+  },
+  {
+    "name": "Howl",
+    "age": 27,
+    "photo": "https://i.pinimg.com/736x/23/d6/26/23d62677abffcd3db17eb908e15a868e.jpg"
+  },
+  {
+    "name": "Pikachu",
+    "age": "10",
+    "photo": "https://www.freeiconspng.com/thumbs/pikachu-transparent/pikachu-transparent-hd-1.png"
+  },
+   {
+    "name": "Totoro",
+    "age": "1000",
+    "photo": "https://www.kindpng.com/picc/m/751-7514476_transparent-totoro-totoro-transparent-hd-png-download.png"
+  },
+  {
+    "name": "Megamind",
+    "age": "40",
+    "photo": "https://img.sparknews.funkemedien.de/400139592/400139592_1682404060_v16_9_1200.jpeg"
+  }
+]

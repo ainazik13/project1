@@ -117,3 +117,53 @@ btnReset.addEventListener('click',()=>{
 })
 
 
+//characters
+
+const characters = document.querySelector('.characters-list')
+const loadCharacters = async () => {
+    try {
+        const response = await fetch('../data/characters.json')
+        if (!response.ok) {
+            console.error('Error')
+        }
+        const objectPerson = await response.json()
+        objectPerson.forEach((person) => {
+            const personCard = document.createElement('div')
+            personCard.setAttribute('class', 'person-card')
+            personCard.innerHTML = `
+                <div class="person-photo">
+                    <img src="${person.photo}" alt="${person.name}" class="person-img">  
+                </div>
+                <h2 class="person-name">Name:${person.name}</h2>
+                <h3 class="person-age">Age:${person.age}</h3>
+                
+            `;
+            characters.append(personCard)
+        });
+    } catch (error) {
+        console.error('Error')
+    }
+};
+
+
+loadCharacters()
+
+const xhr = new XMLHttpRequest();
+
+
+xhr.open('GET', '../data/any.json', true);
+
+xhr.onload = function () {
+  if (xhr.status === 200) {
+    const data = JSON.parse(xhr.responseText);
+    console.log('data any.json:', data);
+  } else {
+    console.error('error:', xhr.status);
+  }
+};
+
+xhr.onerror = function () {
+  console.error('error send');
+};
+
+xhr.send();

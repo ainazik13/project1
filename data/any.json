@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Ainazik",
+    "age": 20,
+    "hobby": "play the violin",
+    "color": ["purple,white"],
+    "favorite-film": "Coraline",
+    "params":{
+  "height": 146,
+  "width": 36
+}
+  }
+]
