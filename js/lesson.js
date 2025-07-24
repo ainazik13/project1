@@ -129,21 +129,6 @@ const card=document.querySelector(".card")
 let numId=1
 const maxId=200
 
-// btnNext.onclick=()=>{
-//   numId++
-//   fetch(`https://jsonplaceholder.typicode.com/todos/${numId}`)
-//       .then((response)=>response.json())
-//       .then((data)=>{
-//         const {title,id,completed}=data
-//
-//         card.style.borderColor=completed ? "green":"red"
-//         card.innerHTML=`
-//             <p>${title}<p>
-//             <span>${id}<span>
-//         `
-//       })
-// }
-
 
 function loadCard(id) {
   fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
