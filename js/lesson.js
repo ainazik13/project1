@@ -120,3 +120,73 @@ converter(somInput, 'som')
 converter(usdInput, 'usd')
 converter(eurInput, 'eur')
 converter(krwInput, 'krw')
+
+
+const btnPrev=document.querySelector("#btn-prev")
+const btnNext=document.querySelector("#btn-next")
+const card=document.querySelector(".card")
+
+let numId=1
+const maxId=200
+
+// btnNext.onclick=()=>{
+//   numId++
+//   fetch(`https://jsonplaceholder.typicode.com/todos/${numId}`)
+//       .then((response)=>response.json())
+//       .then((data)=>{
+//         const {title,id,completed}=data
+//
+//         card.style.borderColor=completed ? "green":"red"
+//         card.innerHTML=`
+//             <p>${title}<p>
+//             <span>${id}<span>
+//         `
+//       })
+// }
+
+
+function loadCard(id) {
+  fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
+    .then(response => {
+      if (!response.ok) throw new Error("Error");
+      return response.json();
+    })
+    .then(data => {
+      const { title, id, completed } = data;
+      card.style.border = "2px solid";
+      card.style.borderColor = completed ? "green" : "red";
+      card.innerHTML = `
+        <p>${title}</p>
+        <p><strong>ID:</strong> ${id}</p>
+      `;
+    })
+    .catch(() => {
+      card.innerHTML = "<p></p>";
+    });
+}
+
+btnNext.onclick = () => {
+  numId = numId >= maxId ? 1 : numId + 1;
+  loadCard(numId);
+};
+
+btnPrev.onclick = () => {
+  numId = numId <= 1 ? maxId : numId - 1;
+  loadCard(numId);
+};
+
+
+loadCard(numId);
+
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+  .then(response => {
+    if (!response.ok) throw new Error("Error");
+    return response.json();
+  })
+  .then(data => {
+    console.log("post:", data);
+  })
+  .catch(error => {
+    console.error("Error:", error.message);
+  });
